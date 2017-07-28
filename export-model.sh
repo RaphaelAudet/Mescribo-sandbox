@@ -2,4 +2,4 @@
 
 set -xeu
 
-cat testfile.txt >> output.txt
+cat testfile.txt >> ./output.txt
