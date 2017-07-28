@@ -10,7 +10,7 @@ setup_git() {
 commit_website_files() {
 
 
-  git add. output.txt
+  git add output.txt
   git commit -m "updated docs $TRAVIS_BUILD_NUMBER"
 }
 
