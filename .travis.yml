@@ -1,0 +1,15 @@
+sudo: required
+
+language: sh
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-get install -y python-virtualenv curl
+
+script:
+  - bash travis.sh
+
+notifications:
+  email: false
