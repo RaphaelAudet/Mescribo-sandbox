@@ -10,14 +10,17 @@ setup_git() {
 commit_website_files() {
 
   cat output.txt
+  env
+  git branch -D travis
+  git checkout -b travis
   git add output.txt
   git commit -m "updated docs $TRAVIS_BUILD_NUMBER"
   git status
 }
 
 upload_files() {
-  git remote add github  https://${GH_TOKEN}@github.com/travis > /dev/null 2>&1
-  git push github travis
+  git remote add github  https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG > /dev/null 2>&1
+  git push github travis --force
 }
 
 setup_git
