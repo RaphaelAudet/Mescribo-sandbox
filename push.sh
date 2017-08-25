@@ -12,6 +12,7 @@ commit_website_files() {
 
   git add output.txt
   git commit -m "updated docs $TRAVIS_BUILD_NUMBER"
+  git status -s
 }
 
 upload_files() {
