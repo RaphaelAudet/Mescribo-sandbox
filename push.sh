@@ -16,8 +16,8 @@ commit_website_files() {
 }
 
 upload_files() {
-  git remote add github  https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG > /dev/null 2>&1
-  git push github $TRAVIS_BRANCH
+  git remote add github  https://${GH_TOKEN}@github.com/travis > /dev/null 2>&1
+  git push github travis
 }
 
 setup_git
