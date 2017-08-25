@@ -1,1 +1,3 @@
-manual input
+manual input 2
+testfile
+testfile
