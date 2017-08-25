@@ -15,13 +15,13 @@ commit_website_files() {
   git commit -m "updated docs $TRAVIS_BUILD_NUMBER"
   git checkout -b travisbranch
 
+  git remote add github  https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG > /dev/null 2>&1
   git checkout $TRAVIS_PULL_REQUEST_BRANCH
   git merge travisbranch
+  git push github $TRAVIS_PULL_REQUEST_BRANCH --force
 }
 
 upload_files() {
-  git remote add github  https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG > /dev/null 2>&1
-  git push github $TRAVIS_PULL_REQUEST_BRANCH --force
 }
 
 setup_git
