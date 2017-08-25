@@ -13,12 +13,9 @@ commit_website_files() {
   env
   git add output.txt
   git commit -m "updated docs $TRAVIS_BUILD_NUMBER"
-  git checkout -b travisbranch
 
   git remote add github  https://${GH_TOKEN}@github.com/$TRAVIS_REPO_SLUG > /dev/null 2>&1
-  git checkout $TRAVIS_PULL_REQUEST_BRANCH
-  git merge travisbranch
-  git push github $TRAVIS_PULL_REQUEST_BRANCH --force
+  git push github HEAD:$TRAVIS_PULL_REQUEST_BRANCH --force
 }
 
 setup_git
